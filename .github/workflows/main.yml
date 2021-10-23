@@ -25,14 +25,9 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.3
       - name: Build
         run: msbuild IOTLinkTTS.sln /p:Configuration=Release
-      - name: Bump version and push tag
-        id: tag_version
-        uses: mathieudutour/github-tag-action@v5.6
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "/bin/Release/IOTLinkTTS.dll,/bin/Release/addon.yaml"
+          artifacts: "\\bin\\Release\\IOTLinkTTS.dll,\\bin\\Release\\addon.yaml"
           bodyFile: "ReadMe.md"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: 0.1
