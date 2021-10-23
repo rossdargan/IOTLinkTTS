@@ -30,3 +30,4 @@ jobs:
           artifacts: "\\bin\\Release\\IOTLinkTTS.dll,\\bin\\Release\\addon.yaml"
           bodyFile: "ReadMe.md"
           token: ${{ secrets.GITHUB_TOKEN }}
+          tag: "${{ inputs.tag }}"
