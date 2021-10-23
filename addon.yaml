@@ -1,0 +1,9 @@
+﻿########################################################################
+# Addon Information
+########################################################################
+enabled: true
+id: TTSCommands
+name: TTS Commands
+file: IOTLinkTTS.dll
+minApiVersion: 2.2.0
+maxApiVersion: 
