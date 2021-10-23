@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Create Release
 
 # Controls when the workflow will run
 on:
@@ -30,4 +30,3 @@ jobs:
           artifacts: "\\bin\\Release\\IOTLinkTTS.dll,\\bin\\Release\\addon.yaml"
           bodyFile: "ReadMe.md"
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: 0.1
