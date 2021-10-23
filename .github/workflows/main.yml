@@ -34,3 +34,14 @@ jobs:
           # Artifact name
           name: release
           path: bin\Release\
+      - name: release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          release_name: CI Build
+          tag_name: ${{ github.ref }}
+          body_path: README.md
+        env:
+          GITHUB_TOKEN: ${{ github.token }}          
