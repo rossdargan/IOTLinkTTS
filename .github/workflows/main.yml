@@ -28,6 +28,6 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "\\bin\\Release\\IOTLinkTTS.dll,\\bin\\Release\\addon.yaml"
-          bodyFile: "ReadMe.md"
+          bodyFile: "Changes.md"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.event.inputs.tag }}
