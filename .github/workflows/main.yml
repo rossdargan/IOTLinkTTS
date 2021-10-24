@@ -26,12 +26,12 @@ jobs:
         uses: TheDoctor0/zip-release@0.6.0
         with:        # Filename for archive          
           # Working directory before zipping
-          path: bin/Release/
+          directory: bin/Release/
           # List of excluded files / directories
           exclusions: "IOTLinkAPI.dll IOTLinkTTS.pdb"
       - uses: ncipollo/release-action@v1
         if: startsWith( github.ref, 'refs/tags/releases/') 
         with:
-          artifacts: "release.zip"
+          artifacts: "bin/Release/release.zip"
           bodyFile: "Changes.md"
           token: ${{ secrets.GITHUB_TOKEN }}
