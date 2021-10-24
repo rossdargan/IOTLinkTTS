@@ -2,4 +2,4 @@
 
 Initial release!
 
-Tryting to fix automated builds!
+Let me know if you want anything else added. Happy to have PRs too :-)
