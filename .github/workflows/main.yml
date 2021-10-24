@@ -27,6 +27,8 @@ jobs:
         with:        # Filename for archive          
           # Working directory before zipping
           path: bin/Release/
+          directory: "/"
+          filename: "release.zip"
           # List of excluded files / directories
           exclusions: "IOTLinkAPI.dll IOTLinkTTS.pdb"
       - uses: ncipollo/release-action@v1
