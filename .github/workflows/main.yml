@@ -32,6 +32,6 @@ jobs:
       - uses: ncipollo/release-action@v1
         if: startsWith( github.ref, 'refs/tags/releases/') 
         with:
-          artifacts: "/release.zip"
+          artifacts: "release.zip"
           bodyFile: "Changes.md"
           token: ${{ secrets.GITHUB_TOKEN }}
