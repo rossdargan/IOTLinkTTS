@@ -31,6 +31,7 @@ jobs:
       - name: Build
         run: msbuild IOTLinkTTS.sln /p:Configuration=Release
       - uses: ncipollo/release-action@v1
+        if: startsWith( github.ref, 'refs/tags/releases/') 
         with:
           artifacts: "\\IOTLinkTTS\\bin\\Release\\IOTLinkTTS.dll,\\IOTLinkTTS\\bin\\Release\\addon.yaml"
           bodyFile: "Changes.md"
