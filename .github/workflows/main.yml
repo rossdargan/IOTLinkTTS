@@ -21,9 +21,17 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.3
       - name: Build
         run: msbuild IOTLinkTTS.sln /p:Configuration=Release
+      - name: Zip Release
+        # You may pin to the exact commit or the version.
+        uses: TheDoctor0/zip-release@0.6.0
+        with:        # Filename for archive          
+          # Working directory before zipping
+          directory: bin/Release/
+          # List of excluded files / directories
+          exclusions: "IOTLinkAPI.dll IOTLinkTTS.pdb"
       - uses: ncipollo/release-action@v1
         if: startsWith( github.ref, 'refs/tags/releases/') 
         with:
-          artifacts: "bin/*"
+          artifacts: "release.zip"
           bodyFile: "Changes.md"
           token: ${{ secrets.GITHUB_TOKEN }}
