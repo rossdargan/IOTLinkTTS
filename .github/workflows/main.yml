@@ -4,6 +4,9 @@ name: Create Release
 
 # Controls when the workflow will run
 on:
+  push:
+    tags: releases/[1-9]+.[0-9]+.[0-9]+
+    branches: main
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
    inputs:
@@ -30,4 +33,3 @@ jobs:
           artifacts: "\\bin\\Release\\IOTLinkTTS.dll,\\bin\\Release\\addon.yaml"
           bodyFile: "Changes.md"
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: ${{ github.event.inputs.tag }}
