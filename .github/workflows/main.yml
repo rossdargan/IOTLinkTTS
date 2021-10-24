@@ -24,6 +24,6 @@ jobs:
       - uses: ncipollo/release-action@v1
         if: startsWith( github.ref, 'refs/tags/releases/') 
         with:
-          artifacts: "\\IOTLinkTTS\\bin\\Release\\IOTLinkTTS.dll,\\IOTLinkTTS\\bin\\Release\\addon.yaml"
+          artifacts: "*"
           bodyFile: "Changes.md"
           token: ${{ secrets.GITHUB_TOKEN }}
